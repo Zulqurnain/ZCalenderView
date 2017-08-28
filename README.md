@@ -28,7 +28,7 @@ It's a custom calender inspired from iOS7 style calender , displays Months verti
 
 ```java
 dependencies {
-    compile 'compile 'com.github.Zulqurnain:ZCalenderView:v1.0'
+    compile 'com.github.Zulqurnain:ZCalenderView:v1.0'
 }
 ```
 ### Maven
