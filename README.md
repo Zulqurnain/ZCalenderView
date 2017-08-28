@@ -58,7 +58,7 @@ resolvers += "jitpack" at "https://jitpack.io"
 
 ### Usage
  
-Declare a DayPickerView inside your layout XML file:
+Declare a ZCalenderView inside your layout XML file:
  
 ``` xml
 
@@ -116,7 +116,7 @@ Then you can use it like this:
 
 ### Customization
 
-CalendarListview is fully customizable:
+ZCalenderView is fully customizable:
 
 * app:colorSelectedDayBackground  --> If you click on a day, a circle indicator or a rouded rectangle indicator will be draw.
 * app:colorSelectedDayText  --> This is the text color of a selected day
