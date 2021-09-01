@@ -31,6 +31,6 @@ class ExampleAndroidTest {
         // act
 
         //assertion
-        assertEquals(true,true)
+        assertEquals(1,1)
     }
 }
