@@ -1,6 +1,6 @@
 # ZCalenderView
 
-It's a custom calender inspired from iOS7 style calender , displays Months verticaly. you can include this library using gradle , maven and if you enjoy don't forget to follow me on facebook [@RajaJutt](https://www.facebook.com/Raja.jutt "joine on facebook") , twitter [@H4ck3rJutt](https://twitter.com/H4ck3rJutt "twitter") Thanks ;)
+It's a custom calender inspired from iOS7 style calender , displays Months verticaly. you can include this library using gradle , maven and if you enjoy don't forget to follow me on facebook [@RajaJutt](https://www.facebook.com/Raja.jutt "joine on facebook") , twitter [@zulqurnainbro](https://twitter.com/zulqurnainbro "twitter") Thanks ;)
 
 ## ScreenShots
 
@@ -28,7 +28,7 @@ It's a custom calender inspired from iOS7 style calender , displays Months verti
 
 ```java
 dependencies {
-    compile 'com.github.Zulqurnain:ZCalenderView:v1.0'
+    implement 'com.github.Zulqurnain:ZCalenderView:v2.0'
 }
 ```
 ### Maven
