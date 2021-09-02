@@ -11,7 +11,7 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        val calc = 2 + 2
-        assertEquals(4, calc)
+        val calc = 2 + 3
+        assertEquals(5, calc)
     }
 }
