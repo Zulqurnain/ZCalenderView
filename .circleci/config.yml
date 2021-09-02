@@ -34,7 +34,7 @@ jobs:
           name: Launch emulator
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib
       - run:
-          command: emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
+          command: armeabi-v7a -avd test -noaudio -no-boot-anim -no-window -accel on
           background: true
       - run:
           name: Wait emulator
