@@ -48,30 +48,38 @@ jobs:
       - run:
           name: Run App UnitTest
           command: ./gradlew :app:testDebugUnitTest
+#      - run:
+#          name: Run UI tests (with retry)
+#          command: |
+#            MAX_TRIES=2
+#            run_with_retry() {
+#               n=1
+#               until [ $n -gt $MAX_TRIES ]
+#               do
+#                  echo "Starting test attempt $n"
+#                  ./gradlew connectedDebugAndroidTest && break
+#                  n=$[$n+1]
+#                  sleep 5
+#               done
+#               if [ $n -gt $MAX_TRIES ]; then
+#                 echo "Max tries reached ($MAX_TRIES)"
+#                 exit 1
+#               fi
+#            }
+#            run_with_retry
       - run:
-          name: Run UI tests (with retry)
-          command: |
-            MAX_TRIES=2
-            run_with_retry() {
-               n=1
-               until [ $n -gt $MAX_TRIES ]
-               do
-                  echo "Starting test attempt $n"
-                  ./gradlew connectedDebugAndroidTest && break
-                  n=$[$n+1]
-                  sleep 5
-               done
-               if [ $n -gt $MAX_TRIES ]; then
-                 echo "Max tries reached ($MAX_TRIES)"
-                 exit 1
-               fi
-            }
-            run_with_retry
+          name: Run EspressoTests
+          command: ./gradlew :app:testDebugUnitTest
       - save_cache:
           key: gradle-v1-{{ arch }}-{{ checksum "/tmp/gradle_cache_seed" }}
           paths:
             - ~/.gradle/caches
             - ~/.gradle/wrapper
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+      - store_test_results:
+          path: app/build/test-results
 workflows:
   build:
     jobs:
