@@ -13,6 +13,9 @@ It's a custom calender inspired from iOS7 style calender , displays Months verti
 - Support for Marking Events 
 - Curreent day and Marked day selection color and text changing
 - fixed crashes
+- Kotlin Support :heartpulse:
+- Android 11 Support :scream:
+- JCenter Removed :ok_hand:
 
 ### Gradle [![](https://jitpack.io/v/Zulqurnain/ZCalenderView.svg)](https://jitpack.io/#Zulqurnain/ZCalenderView)
 
@@ -28,7 +31,7 @@ It's a custom calender inspired from iOS7 style calender , displays Months verti
 
 ```java
 dependencies {
-    implement 'com.github.Zulqurnain:ZCalenderView:v2.0'
+    implement 'com.github.Zulqurnain:ZCalenderView:2.0'
 }
 ```
 ### Maven
@@ -43,7 +46,7 @@ dependencies {
 <dependency>
 	    <groupId>com.github.Zulqurnain</groupId>
 	    <artifactId>ZCalenderView</artifactId>
-	    <version>v1.0</version>
+	    <version>2.0</version>
 </dependency>
 ```
 ### Sbt
@@ -53,7 +56,7 @@ resolvers += "jitpack" at "https://jitpack.io"
 ```
 **Step-2** Add the dependency in the form
 ```java
-	libraryDependencies += "com.github.Zulqurnain" % "ZCalenderView" % "v1.0"	
+	libraryDependencies += "com.github.Zulqurnain" % "ZCalenderView" % "2.0"
 ```
 
 ### Usage
