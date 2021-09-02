@@ -15,6 +15,12 @@ jobs:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
       - run:
+          name: Install licenses
+          command: cp licenses/* /opt/android/sdk/licenses/
+      - run:
+          name: Approve license for build tools
+          command: (echo y; echo y; echo y; echo y; echo y; echo y) | $ANDROID_HOME/tools/bin/sdkmanager --licenses && sdkmanager --update
+      - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
@@ -31,11 +37,9 @@ jobs:
           name: Setup emulator
           command: sdkmanager "system-images;android-16;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-16;default;armeabi-v7a"
       - run:
-          name: Launch emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib
-      - run:
-          command: armeabi-v7a -avd test -noaudio -no-boot-anim -no-window -accel on
+          name: Run Emulator
           background: true
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
       - run:
           name: Wait emulator
           command: |
@@ -44,6 +48,21 @@ jobs:
             # unlock the emulator screen
             sleep 30
             adb shell input keyevent 82
+      - run:
+          command: |
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug
+            log
+            set -x
+
+            function install_apk() {
+            cd $ANDROID_HOME/platform-tools
+            # ./emulator -avd emulator -qemu -no-snapshot -no-window -no-audio -verbose -x
+            adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed)]]; do sleep 1; done;'
+            adb install /home/android/ZCalenderView/app/build/outputs/apk/app-debug.apk
+            install_apk
       - run:
           name: Run EspressoTests
           command: ./gradlew :app:testDebugUnitTest
