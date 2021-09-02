@@ -3,14 +3,13 @@ jobs:
   build:
     machine:
       image: android:202102-01
-    # To optimize build times, we recommend "large" and above for Android-related jobs
-    resource_class: large
+    resource_class: medium
     steps:
       - checkout
       - run:
           name: Create avd
           command: |
-            SYSTEM_IMAGES="system-images;android-29;default;x86"
+            SYSTEM_IMAGES="system-images;android-30;default;x86"
             sdkmanager "$SYSTEM_IMAGES"
             echo "no" | avdmanager --verbose create avd -n test -k "$SYSTEM_IMAGES"
       - run:
@@ -25,6 +24,9 @@ jobs:
             shasum | awk '{print $1}' > /tmp/gradle_cache_seed
       - restore_cache:
           key: gradle-v1-{{ arch }}-{{ checksum "/tmp/gradle_cache_seed" }}
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
       - run:
           # run in parallel with the emulator starting up, to optimize build time
           name: Run assembleDebugAndroidTest task
