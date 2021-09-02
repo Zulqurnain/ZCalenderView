@@ -14,12 +14,12 @@ jobs:
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
-      - run:
-          name: Install licenses
-          command: cp licenses/* /opt/android/sdk/licenses/
-      - run:
-          name: Approve license for build tools
-          command: (echo y; echo y; echo y; echo y; echo y; echo y) | $ANDROID_HOME/tools/bin/sdkmanager --licenses && sdkmanager --update
+#      - run:
+#          name: Install licenses
+#          command: cp licenses/* /opt/android/sdk/licenses/
+#      - run:
+#          name: Approve license for build tools
+#          command: (echo y; echo y; echo y; echo y; echo y; echo y) | $ANDROID_HOME/tools/bin/sdkmanager --licenses && sdkmanager --update
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
