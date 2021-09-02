@@ -1,22 +1,26 @@
 version: '2.1'
 orbs:
-  android: circleci/android@1.0
+  android: circleci/android@1.0.3
 jobs:
   test:
     executor:
-      name: android/myavd
-      sdk-version: '30'
+      name: android/android-machine
+      resource-class: large
       memory: 1024
     steps:
       - checkout
-      - restore-build-cache
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
-      - save-build-cache
-      - accept-licenses
       - android/start-emulator-and-run-tests:
+          install: true
+          avd-name: myavd
+          no-window: true
+          restore-gradle-cache-prefix: v1a
           system-image: system-images;android-29;default;x86
+      - android/run-tests
+      - android/save-gradle-cache:
+          cache-prefix: v1a
       - store_artifacts:
           path: app/build/reports
           destination: reports
