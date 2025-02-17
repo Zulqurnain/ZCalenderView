@@ -1,13 +1,25 @@
 pull_request_rules:
-  - name: Auto Merge After CI/Approve
+  - name: "Auto Merge After CI/Approve"
     conditions:
-#      - status-success=continuous-integration/jenkins/branch
       - "#approved-reviews-by>=1"
       - "#changes-requested-reviews-by=0"
       - label=auto-merge
+      - status-success=ci
+      - -conflict
     actions:
       merge:
         method: squash
-        rebase_fallback: merge
-        strict: smart
+        commit_message_template: title+body  # Correct property name from schema
+      queue:
+        name: default
       delete_head_branch: {}
+
+queue_rules:
+  - name: default
+    batch_size: 1
+    merge_method: squash
+    allow_inplace_checks: true
+
+# Optional but recommended for modern configurations
+merge_queue:
+  max_parallel_checks: 3

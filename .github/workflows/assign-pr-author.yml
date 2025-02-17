@@ -1,13 +1,23 @@
-#This GitHub action will auto-assign PR author as assignee and will not override the assignee if it's already assigned manually.
-
-
-name: Assign Author
-on: [pull_request]
+name: Assign PR Author
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+    branches:
+      - develop  # Specific to develop branch
 
 jobs:
-  label:
+  assign-author:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
     steps:
-    - uses: technote-space/assign-author@v1.3.1
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Assign PR Author
+        uses: technote-space/assign-author@v1.7.1  # Updated to latest version
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          # Custom configuration
+          allow_self_assign: true
+          skip_draft: true      # Skip draft PRs
+          add_reviewers: false  # Maintain original behavior
