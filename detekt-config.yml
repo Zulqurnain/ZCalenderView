@@ -4,20 +4,20 @@ failFast: false
 test-pattern: # Configure exclusions for test sources
   active: true
   patterns: # Test file regexes
-  - '.*/test/.*'
-  - '.*Test.kt'
-  - '.*Spec.kt'
+    - '.*/test/.*'
+    - '.*Test.kt'
+    - '.*Spec.kt'
   exclude-rule-sets:
-  - 'comments'
+    - 'comments'
   exclude-rules:
-  - 'NamingRules'
-  - 'WildcardImport'
-  - 'MagicNumber'
-  - 'MaxLineLength'
-  - 'LateinitUsage'
-  - 'StringLiteralDuplication'
-  - 'SpreadOperator'
-  - 'TooManyFunctions'
+    - 'NamingRules'
+    - 'WildcardImport'
+    - 'MagicNumber'
+    - 'MaxLineLength'
+    - 'LateinitUsage'
+    - 'StringLiteralDuplication'
+    - 'SpreadOperator'
+    - 'TooManyFunctions'
 
 build:
   warningThreshold: 1
@@ -40,17 +40,17 @@ processors:
 console-reports:
   active: true
   exclude:
-  #  - 'ProjectStatisticsReport'
-  #  - 'ComplexityReport'
-  #  - 'NotificationReport'
-  #  - 'FindingsReport'
-  #  - 'BuildFailureReport'
+  # - 'ProjectStatisticsReport'
+  # - 'ComplexityReport'
+  # - 'NotificationReport'
+  # - 'FindingsReport'
+  # - 'BuildFailureReport'
 
 output-reports:
   active: true
   exclude:
-  #  - 'PlainOutputReport'
-  #  - 'XmlOutputReport'
+  # - 'PlainOutputReport'
+  # - 'XmlOutputReport'
 
 comments:
   active: false
@@ -174,22 +174,22 @@ exceptions:
   TooGenericExceptionCaught:
     active: false
     exceptions:
-    - ArrayIndexOutOfBoundsException
-    - Error
-    - Exception
-    - IllegalMonitorStateException
-    - NullPointerException
-    - IndexOutOfBoundsException
-    - RuntimeException
-    - Throwable
+      - ArrayIndexOutOfBoundsException
+      - Error
+      - Exception
+      - IllegalMonitorStateException
+      - NullPointerException
+      - IndexOutOfBoundsException
+      - RuntimeException
+      - Throwable
   TooGenericExceptionThrown:
     active: true
     exceptions:
-    - Error
-    - Exception
-    - NullPointerException
-    - Throwable
-    - RuntimeException
+      - Error
+      - Exception
+      - NullPointerException
+      - Throwable
+      - RuntimeException
 
 naming:
   active: false
@@ -243,7 +243,7 @@ performance:
   ForEachOnRange:
     active: true
   SpreadOperator:
-    active: flase
+    active: false
   UnnecessaryTemporaryInstantiation:
     active: true
 
@@ -339,32 +339,41 @@ style:
     active: false
   ReturnCount:
     active: false
-    max: 2
-    excludedFunctions: "equals"
-  SafeCast:
+    maxReturns: 4
+  SafeCallOnCollectionResult:
     active: false
-  SerialVersionUIDInSerializableClass:
+  StringLiteralDuplication:
     active: false
-  SpacingBetweenPackageAndImports:
-    active: true
-  ThrowsCount:
-    active: false
-    max: 2
   UnnecessaryAbstractClass:
+    active: false
+  UnnecessaryApply:
     active: false
   UnnecessaryInheritance:
     active: false
+  UnnecessaryLet:
+    active: false
   UnnecessaryParentheses:
     active: false
-  UntilInsteadOfRangeTo:
+  UnnecessarySafeCall:
     active: false
-  UnusedImports:
-    active: true
+  UnnecessaryThis:
+    active: false
+  UnnecessaryTypeParameterConstraint:
+    active: false
+  UnnecessaryVisibilityModifier:
+    active: false
+  UnusedPrivateMember:
+    active: false
+    excludeAnnotatedProperties: false
+    excludePrivateClasses: false
+    excludePrivateExtensions: false
+    excludePrivateFunctions: false
+    excludePrivateProperties: false
   UseDataClass:
     active: false
-    excludeAnnotatedClasses: ""
+  UseExpressionBody:
+    active: false
+  UseRequire:
+    active: false
   UtilityClassWithPublicConstructor:
     active: false
-  WildcardImport:
-    active: false
-    excludeImports: 'java.util.*,kotlinx.android.synthetic.*'

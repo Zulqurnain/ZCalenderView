@@ -1,11 +1,20 @@
-**Summary**:
-=========
+## Summary
+Briefly summarize the purpose of this pull request.
 
+## Changes Made
+Describe the specific changes made in this pull request.
 
+## Screenshots/GIFs
+Include relevant screenshots or GIFs to visually demonstrate the changes.
 
-**Fixes/Feature**:
-=========
+## Related Issues
+List any related issues addressed or resolved by this pull request.
 
+## Checklist
+- [ ] All tests pass successfully.
+- [ ] Documentation updated (if applicable).
+- [ ] Code follows project coding standards.
+- [ ] Changes reviewed internally.
 
-**POW / Screenshot(s) / Video**:
-=========
+## Additional Notes
+Add any additional context, concerns, or considerations here.
