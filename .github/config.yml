@@ -1,44 +1,40 @@
-# Configuration for request-info - https://github.com/behaviorbot/request-info
+# .github/config.yml
+# Configuration for develop branch
 
-# *Required* Comment to reply with
+# Request-Info Configuration (https://github.com/behaviorbot/request-info)
 requestInfoReplyComment: >
-  :clap: We would appreciate it if you could provide us with more info about this issue/pr!
+  :mag: Please help us improve by sharing additional details about your contribution!
+  Our team needs more information to properly review this.
 
-# *OPTIONAL* default titles to check against for lack of descriptiveness
-# MUST BE ALL LOWERCASE
 requestInfoDefaultTitles:
-  - update readme.md
-  - updates
   - update
+  - fix
+  - changes
+  - develop branch update
 
-# *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
-requestInfoLabelToAdd: "Status: More Information Needed"
+requestInfoLabelToAdd: "Status: Needs Info"
 
-
-
-
-# Configuration for welcome - https://github.com/behaviorbot/welcome
-
-# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
-
-# Comment to be posted to on first time issues
+# Welcome Configuration
 newIssueWelcomeComment: >
-  :raised_hands: Thanks for opening your first issue here! Be sure to follow the issue template!
+  :seedling: Welcome to our develop branch issue tracker!
+  Please ensure you've:
+  1. Followed the development checklist
+  2. Referenced the correct milestone
+  3. Included environment details
 
-# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
-
-# Comment to be posted to on PRs from first time contributors in your repository
 newPRWelcomeComment: >
-  :raised_hands: Thanks for opening this pull request! Please check out our contributing guidelines.
+  :construction_worker: Thanks for contributing to our development branch!
+  Please verify:
+  - All tests pass
+  - Documentation updated
+  - Branch is up-to-date with develop
 
-# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
-
-# Comment to be posted to on pull requests merged by a first time user
+# PR Merge Configuration
 firstPRMergeComment: >
-  :tada: Congrats on merging your first pull request! myself Zulqurnain and online community is Thanksfull to you!
+  :rocket: Amazing work merging your first develop branch PR! 
+  The development team (including Zulqurnain) appreciates your contribution!
 
-
-
-# Configuration for todo - https://github.com/jasonetco/todo
 todo:
-  - label: "Type: Todo"
+  - label: "Stage: Development"
+  - label: "Priority: High"
+  - label: "Type: Enhancement"
