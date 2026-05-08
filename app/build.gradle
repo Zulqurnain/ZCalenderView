@@ -4,7 +4,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'infinitnoob.com.samplezcalenderview'
-    compileSdk = 34
+    compileSdk = 35
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
