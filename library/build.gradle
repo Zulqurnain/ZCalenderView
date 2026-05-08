@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         namespace "jutt.com.zcalenderview"

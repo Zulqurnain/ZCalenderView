@@ -2,8 +2,6 @@
 
 A custom iOS-style vertical calendar view with event marking support for Android
 
-![Banner Image](https://via.placeholder.com/800x200.png?text=ZCalendarView+Banner)
-
 ## 📸 Screenshots
 
 | ![Month View](https://github.com/Zulqurnain/ZCalenderView/raw/master/screenshots/1.png) | ![Day Selection](https://github.com/Zulqurnain/ZCalenderView/raw/master/screenshots/2.png) | ![Event Marking](https://github.com/Zulqurnain/ZCalenderView/raw/master/screenshots/3.png) |
@@ -165,3 +163,9 @@ Permission is hereby granted...
 5. Verify all links work correctly
 
 The formatting is now compatible with Android Studio's Markdown parser and follows best practices for GitHub documentation.
+
+---
+
+**Built by [Zulqurnain Haider](https://zulqurnainj.com/) — Senior Full Stack Engineer**
+
+For full portfolio visit: [https://zulqurnainj.com/](https://zulqurnainj.com/)
